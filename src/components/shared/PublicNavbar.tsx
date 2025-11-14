@@ -60,7 +60,7 @@ const PublicNavbar = () => {
                                 Login
                             </Button>
                         </Link>
-                        <Link href='/signup'>
+                        <Link href='/register'>
                             <Button className='bg-linear-to-r from-blue-500 to-blue-600 text-white shadow-lg transition-all duration-300 hover:shadow-xl hover:scale-105 dark:from-blue-600 dark:to-blue-700'>
                                 Sign Up
                             </Button>
@@ -112,7 +112,7 @@ const PublicNavbar = () => {
                                     </Button>
                                 </Link>
                                 <Link
-                                    href='/signup'
+                                    href='/register'
                                     onClick={() => setIsOpen(false)}
                                 >
                                     <Button className='w-full bg-linear-to-r from-blue-500 to-blue-600 text-white shadow-lg transition-all duration-300 hover:shadow-xl dark:from-blue-600 dark:to-blue-700'>

@@ -52,6 +52,7 @@ const RegisterForm = () => {
                             </FieldDescription>
                         )}
                     </Field>
+
                     {/* Address */}
                     <Field>
                         <FieldLabel htmlFor='address'>Address</FieldLabel>
@@ -61,13 +62,13 @@ const RegisterForm = () => {
                             type='text'
                             placeholder='123 Main St'
                         />
-
                         {getFieldError('address') && (
                             <FieldDescription className='text-red-600'>
                                 {getFieldError('address')}
                             </FieldDescription>
                         )}
                     </Field>
+
                     {/* Email */}
                     <Field>
                         <FieldLabel htmlFor='email'>Email</FieldLabel>
@@ -77,24 +78,29 @@ const RegisterForm = () => {
                             type='email'
                             placeholder='m@example.com'
                         />
-
                         {getFieldError('email') && (
                             <FieldDescription className='text-red-600'>
                                 {getFieldError('email')}
                             </FieldDescription>
                         )}
                     </Field>
+
                     {/* Password */}
                     <Field>
                         <FieldLabel htmlFor='password'>Password</FieldLabel>
-                        <Input id='password' name='password' type='password' />
-
+                        <Input
+                            id='password'
+                            name='password'
+                            type='password'
+                            placeholder='********'
+                        />
                         {getFieldError('password') && (
                             <FieldDescription className='text-red-600'>
                                 {getFieldError('password')}
                             </FieldDescription>
                         )}
                     </Field>
+
                     {/* Confirm Password */}
                     <Field className='md:col-span-2'>
                         <FieldLabel htmlFor='confirmPassword'>
@@ -104,8 +110,8 @@ const RegisterForm = () => {
                             id='confirmPassword'
                             name='confirmPassword'
                             type='password'
+                            placeholder='********'
                         />
-
                         {getFieldError('confirmPassword') && (
                             <FieldDescription className='text-red-600'>
                                 {getFieldError('confirmPassword')}
@@ -113,6 +119,7 @@ const RegisterForm = () => {
                         )}
                     </Field>
                 </div>
+
                 <FieldGroup className='mt-4'>
                     <Field>
                         <Button type='submit' disabled={isPending}>

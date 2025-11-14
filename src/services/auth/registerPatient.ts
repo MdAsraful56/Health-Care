@@ -1,36 +1,14 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
 'use server';
 
-import z from 'zod';
-
-const registerValidationZodSchema = z
-    .object({
-        name: z.string().min(1, { message: 'Name is required' }),
-        address: z.string().optional(),
-        email: z.email({ message: 'Valid email is required' }),
-        password: z
-            .string()
-            .min(6, {
-                error: 'Password is required and must be at least 6 characters long',
-            })
-            .max(100, {
-                error: 'Password must be at most 100 characters long',
-            }),
-        confirmPassword: z.string().min(6, {
-            error: 'Confirm Password is required and must be at least 6 characters long',
-        }),
-    })
-    .refine((data: any) => data.password === data.confirmPassword, {
-        error: 'Passwords do not match',
-        path: ['confirmPassword'],
-    });
+import { registerValidationZodSchema } from './zod';
 
 export const registerPatient = async (
     _currentState: any,
     formData: any
 ): Promise<any> => {
     try {
-        console.log(formData.get('address'));
+        // console.log(formData.get('address'));
         const validationData = {
             name: formData.get('name'),
             address: formData.get('address'),
